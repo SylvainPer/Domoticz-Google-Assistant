@@ -189,8 +189,10 @@ class OAuthReqHandler(ReqHandler):
         return json.dumps(returnToken)
 
 
-oauthGetMappings = {"/oauth": OAuthReqHandler.oauth,
+oauthGetMappings = {"/gapi/oauth": OAuthReqHandler.oauth,
+                    "/gapi/login": OAuthReqHandler.login,
                     "/login": OAuthReqHandler.login}
 
 oauthPostMappings = {"/login": OAuthReqHandler.login_post,
-                     "/token": OAuthReqHandler.token_post}
+                    "/gapi/login": OAuthReqHandler.login_post,
+                     "/gapi/token": OAuthReqHandler.token_post}

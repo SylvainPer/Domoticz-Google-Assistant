@@ -917,12 +917,12 @@ class SmartHomeReqHandler(OAuthReqHandler):
         return None
 
 if 'userinterface' in configuration and configuration['userinterface'] == True:
-    smarthomeGetMappings = {"/smarthome": SmartHomeReqHandler.smarthome,
-                            "/sync": SmartHomeReqHandler.syncDevices,
+    smarthomeGetMappings = {"/gapi/smarthome": SmartHomeReqHandler.smarthome,
+                            "/gapi/sync": SmartHomeReqHandler.syncDevices,
                             "/settings": SmartHomeReqHandler.settings,
                             "/restart": SmartHomeReqHandler.restartServer}
 
-    smarthomePostMappings = {"/smarthome": SmartHomeReqHandler.smarthome_post,
+    smarthomePostMappings = {"/gapi/smarthome": SmartHomeReqHandler.smarthome_post,
                              "/settings": SmartHomeReqHandler.settings_post}
 else:
     smarthomeGetMappings = {"/smarthome": SmartHomeReqHandler.smarthome,
